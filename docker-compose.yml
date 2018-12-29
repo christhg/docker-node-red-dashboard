@@ -1,0 +1,18 @@
+version: "2"
+services:
+  node-red-dashboard:
+    image: christhg/node-red-dashboard:latest  #images镜像
+    container_name: node-red-dashboard
+    ports: #端口映射
+      - "1880:1880"
+    #expose:
+    #  - "8090"
+    #  - "8099"
+    networks:
+      - node
+    #environment:  #環境變數
+    #volumes: #文件映射
+    #  - /data:/data
+networks:
+  node:
+    driver: bridge
